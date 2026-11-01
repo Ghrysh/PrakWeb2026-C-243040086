@@ -1,6 +1,9 @@
+// === Komponen Utama App ===
 import KartuProfil from './KartuProfil';
+import KartuProyek from './KartuProyek';
 
 function App() {
+  // --- Data Rencana Praktikum ---
   const daftarPraktikum = [
     {
       id: 101,
@@ -32,6 +35,43 @@ function App() {
     },
   ];
 
+  // --- Data Proyek Portofolio ---
+  const daftarProyek = [
+    {
+      id: 1,
+      judul: 'Showcase Portofolio Mini Mahasiswa',
+      deskripsi:
+        'Aplikasi web profil dan showcase proyek praktikum interaktif berbasis React JS dan Vite dengan arsitektur modular komponen.',
+      teknologi: ['React', 'Vite', 'JavaScript', 'CSS3'],
+      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+    },
+    {
+      id: 2,
+      judul: 'Sistem Informasi Praktikum Mahasiswa',
+      deskripsi:
+        'Sistem manajemen jadwal perkuliahan dan laboratorium terpadu untuk monitoring SKS serta kehadiran praktikan secara real-time.',
+      teknologi: ['Laravel', 'PostgreSQL', 'TailwindCSS'],
+      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+    },
+    {
+      id: 3,
+      judul: 'Task Management & Study Tracker',
+      deskripsi:
+        'Aplikasi web produktivitas untuk mengelola tugas perkuliahan, prioritas penugasan, dan pelacak deadline praktikum.',
+      teknologi: ['React', 'Context API', 'LocalStorage'],
+      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+    },
+    {
+      id: 4,
+      judul: 'Katalog Kuliner & Resep Tradisional',
+      deskripsi:
+        'Aplikasi web katalog resep kuliner nusantara dengan fitur pencarian bahan, filter kategori makanan, dan antarmuka responsif.',
+      teknologi: ['JavaScript', 'Bootstrap', 'REST API'],
+      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+    },
+  ];
+
+  // --- Event Handler ---
   const notifikasiSapaan = () => {
     alert(
       'Selamat datang di Modul 1! Anda berhasil menguasai fondasi arsitektur React JS.',
@@ -41,13 +81,14 @@ function App() {
   return (
     <div
       style={{
-        maxWidth: '800px',
+        maxWidth: '900px',
         margin: '40px auto',
         padding: '0 24px',
         fontFamily: 'Arial, sans-serif',
         color: '#222',
       }}
     >
+      {/* Header */}
       <header style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h1 style={{ color: '#1B365D', margin: '0 0 8px' }}>
           Praktikum Pemrograman Web
@@ -57,7 +98,8 @@ function App() {
         </p>
       </header>
 
-      <section style={{ marginBottom: '32px' }}>
+      {/* Bagian Profil */}
+      <section style={{ marginBottom: '36px' }}>
         <h2
           style={{
             color: '#2C3E50',
@@ -76,7 +118,39 @@ function App() {
         />
       </section>
 
-      <section style={{ marginBottom: '32px' }}>
+      {/* Bagian Showcase Portofolio Mini */}
+      <section style={{ marginBottom: '36px' }}>
+        <h2
+          style={{
+            color: '#2C3E50',
+            borderBottom: '2px solid #E1E4E8',
+            paddingBottom: '8px',
+          }}
+        >
+          Showcase Portofolio Mini
+        </h2>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+            gap: '16px',
+            marginTop: '16px',
+          }}
+        >
+          {daftarProyek.map((proyek) => (
+            <KartuProyek
+              key={proyek.id}
+              judul={proyek.judul}
+              deskripsi={proyek.deskripsi}
+              teknologi={proyek.teknologi}
+              linkGithub={proyek.linkGithub}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Bagian Rencana Praktikum */}
+      <section style={{ marginBottom: '36px' }}>
         <h2
           style={{
             color: '#2C3E50',
@@ -86,7 +160,7 @@ function App() {
         >
           Daftar Rencana Praktikum Semester (List Rendering)
         </h2>
-        <div style={{ display: 'grid', gap: '12px' }}>
+        <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
           {daftarPraktikum.map((matkul) => (
             <div
               key={matkul.id}
@@ -131,7 +205,8 @@ function App() {
         </div>
       </section>
 
-      <div style={{ textAlign: 'center', marginTop: '40px' }}>
+      {/* Tombol Interaktivitas */}
+      <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '20px' }}>
         <button
           onClick={notifikasiSapaan}
           style={{

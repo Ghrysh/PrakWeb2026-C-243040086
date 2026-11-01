@@ -1,4 +1,20 @@
-// src/BadgeSkill.jsx
-import React from 'react';
+// === Komponen Badge Skill / Tagar Teknologi ===
+function BadgeSkill({ skill }) {
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        backgroundColor: '#E8F0FE',
+        color: '#1B365D',
+        padding: '4px 10px',
+        borderRadius: '12px',
+        fontSize: '12px',
+        fontWeight: '500',
+      }}
+    >
+      #{skill}
+    </span>
+  );
+}
 
-function BadgeSkill({ skill })
+export default BadgeSkill;
