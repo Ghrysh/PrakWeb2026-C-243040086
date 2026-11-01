@@ -39,35 +39,35 @@ function App() {
   const daftarProyek = [
     {
       id: 1,
-      judul: 'Showcase Portofolio Mini Mahasiswa',
+      judul: 'RuangDonasi API',
       deskripsi:
-        'Aplikasi web profil dan showcase proyek praktikum interaktif berbasis React JS dan Vite dengan arsitektur modular komponen.',
-      teknologi: ['React', 'Vite', 'JavaScript', 'CSS3'],
-      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+        'Layanan Backend REST API untuk platform donasi online, mencakup autentikasi pengguna dengan JWT, manajemen transaksi dan kampanye, serta integrasi payment gateway Midtrans.',
+      teknologi: ['Go', 'Gin', 'GORM', 'PostgreSQL', 'Midtrans', 'Docker'],
+      linkGithub: 'https://github.com/Ghrysh/RuangDonasi_Api',
     },
     {
       id: 2,
-      judul: 'Sistem Informasi Praktikum Mahasiswa',
+      judul: 'Game Edukasi PGSD (Kincir Air)',
       deskripsi:
-        'Sistem manajemen jadwal perkuliahan dan laboratorium terpadu untuk monitoring SKS serta kehadiran praktikan secara real-time.',
-      teknologi: ['Laravel', 'PostgreSQL', 'TailwindCSS'],
-      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+        'Aplikasi web game edukatif interaktif untuk siswa sekolah dasar guna memperkenalkan konsep kincir air melalui modul sains terapan, budaya, engineering, dan simulasi merakit.',
+      teknologi: ['Laravel', 'PHP', 'Blade', 'TailwindCSS', 'JavaScript'],
+      linkGithub: 'https://github.com/Ghrysh/game_pgsd',
     },
     {
       id: 3,
-      judul: 'Task Management & Study Tracker',
+      judul: 'Sixperience - Event Organizer Platform',
       deskripsi:
-        'Aplikasi web produktivitas untuk mengelola tugas perkuliahan, prioritas penugasan, dan pelacak deadline praktikum.',
-      teknologi: ['React', 'Context API', 'LocalStorage'],
-      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+        'Website company profile interaktif untuk organisasi event organizer, dilengkapi showcase portofolio acara, fitur peta interaktif lokasi event, dan dashboard admin manajemen klien.',
+      teknologi: ['Laravel', 'PHP', 'Blade', 'TailwindCSS', 'MySQL', 'Docker'],
+      linkGithub: 'https://github.com/Ghrysh/Sixperience',
     },
     {
       id: 4,
-      judul: 'Katalog Kuliner & Resep Tradisional',
+      judul: 'RM Pawon - Sistem Pemesanan Restoran',
       deskripsi:
-        'Aplikasi web katalog resep kuliner nusantara dengan fitur pencarian bahan, filter kategori makanan, dan antarmuka responsif.',
-      teknologi: ['JavaScript', 'Bootstrap', 'REST API'],
-      linkGithub: 'https://github.com/Ghrysh/PrakWeb2026-C-243040086.git',
+        'Aplikasi web pemesanan menu rumah makan yang menyediakan fitur keranjang interaktif, pelacakan status pesanan real-time, pencetakan receipt, serta panel manajemen menu bagi admin.',
+      teknologi: ['Laravel', 'PHP', 'Blade', 'MySQL', 'JavaScript'],
+      linkGithub: 'https://github.com/Ghrysh/rm_pawon',
     },
   ];
 
