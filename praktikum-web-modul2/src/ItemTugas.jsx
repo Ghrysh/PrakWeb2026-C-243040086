@@ -7,8 +7,10 @@ function ItemTugas({ tugas, onUbahStatus, onHapus }) {
         checked={tugas.selesai}
         onChange={() => onUbahStatus(tugas.id)}
       />
+
       {/* className dinamis: dicoret jika tugas sudah selesai */}
       <span className={tugas.selesai ? 'selesai' : ''}>{tugas.judul}</span>
+
       <button
         className="tombol tombol-merah tombol-kecil"
         onClick={() => onHapus(tugas.id)}
@@ -20,4 +22,3 @@ function ItemTugas({ tugas, onUbahStatus, onHapus }) {
 }
 
 export default ItemTugas;
-

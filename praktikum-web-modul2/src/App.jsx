@@ -19,7 +19,6 @@ function App() {
     ];
   });
 
-  // State untuk filter: 'semua' | 'belum' | 'selesai' (Tugas 1: In-Lab Task)
   const [filter, setFilter] = useState('semua');
 
   // Efek A: dijalankan SEKALI saat App pertama kali tampil
@@ -60,7 +59,6 @@ function App() {
     setDaftarTugas(daftarTugas.filter((tugas) => tugas.id !== id));
   };
 
-  // [Tugas 2] Hapus semua tugas yang selesai (Conditional Rendering)
   const hapusSemuaSelesai = () => {
     setDaftarTugas(daftarTugas.filter((tugas) => !tugas.selesai));
   };
@@ -68,11 +66,10 @@ function App() {
   // 5. Nilai turunan: dihitung dari state, tidak perlu state baru
   const jumlahSelesai = daftarTugas.filter((tugas) => tugas.selesai).length;
 
-  // [Tugas 1] Filter tugas sebelum ditampilkan dengan .map()
-  const daftarTerfilter = daftarTugas.filter((tugas) => {
-    if (filter === 'selesai') return tugas.selesai;
+  const tugasTampil = daftarTugas.filter((tugas) => {
     if (filter === 'belum') return !tugas.selesai;
-    return true; // 'semua'
+    if (filter === 'selesai') return tugas.selesai;
+    return true;
   });
 
   return (
@@ -91,36 +88,28 @@ function App() {
           {jumlahSelesai} dari {daftarTugas.length} tugas selesai
         </p>
 
-        {/* [Tugas 1 & 2] Filter Tombol & Tombol Hapus Semua yang Selesai */}
-        <div className="baris" style={{ marginBottom: '16px' }}>
+        <div className="baris" style={{ marginBottom: '12px' }}>
           <button
-            type="button"
-            className={`tombol tombol-kecil ${filter === 'semua' ? 'tombol-aktif' : 'tombol-outline'}`}
+            className={`tombol tombol-kecil ${filter === 'semua' ? '' : 'tombol-nonaktif'}`}
             onClick={() => setFilter('semua')}
           >
             Semua
           </button>
           <button
-            type="button"
-            className={`tombol tombol-kecil ${filter === 'belum' ? 'tombol-aktif' : 'tombol-outline'}`}
+            className={`tombol tombol-kecil ${filter === 'belum' ? '' : 'tombol-nonaktif'}`}
             onClick={() => setFilter('belum')}
           >
             Belum Selesai
           </button>
           <button
-            type="button"
-            className={`tombol tombol-kecil ${filter === 'selesai' ? 'tombol-aktif' : 'tombol-outline'}`}
+            className={`tombol tombol-kecil ${filter === 'selesai' ? '' : 'tombol-nonaktif'}`}
             onClick={() => setFilter('selesai')}
           >
             Selesai
           </button>
-
-          {/* Tombol Hapus Semua yang Selesai (Hanya muncul jika ada tugas selesai) */}
           {jumlahSelesai > 0 && (
             <button
-              type="button"
               className="tombol tombol-merah tombol-kecil"
-              style={{ marginLeft: 'auto' }}
               onClick={hapusSemuaSelesai}
             >
               Hapus Semua yang Selesai
@@ -129,11 +118,11 @@ function App() {
         </div>
 
         {/* Conditional rendering dengan ternary: tampilkan pesan jika kosong */}
-        {daftarTerfilter.length === 0 ? (
+        {tugasTampil.length === 0 ? (
           <p className="kosong">Belum ada tugas. Yuk tambahkan tugas pertamamu!</p>
         ) : (
           <ul className="daftar">
-            {daftarTerfilter.map((tugas) => (
+            {tugasTampil.map((tugas) => (
               <ItemTugas
                 key={tugas.id}
                 tugas={tugas}

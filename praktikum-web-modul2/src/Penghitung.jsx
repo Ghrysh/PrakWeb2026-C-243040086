@@ -17,15 +17,13 @@ function Penghitung() {
   return (
     <Kartu judul="Penghitung Klik">
       <p>Tombol sudah diklik {jumlah} kali</p>
+
       {/* Conditional rendering: pesan ini hanya muncul jika jumlah >= 5 */}
       {jumlah >= 5 && <p>Wah, kamu rajin sekali mengklik!</p>}
+
       <div className="baris">
-        <button className="tombol" onClick={tambah}>
-          Klik Saya
-        </button>
-        <button className="tombol tombol-merah" onClick={ulangi}>
-          Ulangi
-        </button>
+        <button className="tombol" onClick={tambah}>Klik Saya</button>
+        <button className="tombol tombol-merah" onClick={ulangi}>Ulangi</button>
       </div>
     </Kartu>
   );

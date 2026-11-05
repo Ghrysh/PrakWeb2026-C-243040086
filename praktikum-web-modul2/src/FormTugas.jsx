@@ -12,6 +12,7 @@ function FormTugas({ onTambah }) {
   const tanganiKirim = (event) => {
     event.preventDefault(); // mencegah halaman reload saat formulir dikirim
     if (tidakValid) return; // hentikan jika input tidak valid
+
     onTambah(teks.trim()); // "melapor" ke komponen induk (App)
     setTeks(''); // kosongkan kembali input
   };
@@ -36,4 +37,3 @@ function FormTugas({ onTambah }) {
 }
 
 export default FormTugas;
-
