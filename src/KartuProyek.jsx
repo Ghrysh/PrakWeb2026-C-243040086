@@ -1,4 +1,5 @@
-// === Komponen Kartu Proyek ===
+// src/KartuProyek.jsx
+import React from 'react';
 import BadgeSkill from './BadgeSkill';
 
 function KartuProyek({ judul, deskripsi, teknologi = [], linkGithub }) {
@@ -79,4 +80,3 @@ function KartuProyek({ judul, deskripsi, teknologi = [], linkGithub }) {
 }
 
 export default KartuProyek;
-

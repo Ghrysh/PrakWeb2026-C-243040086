@@ -1,4 +1,6 @@
-// === Komponen Badge Skill / Tagar Teknologi ===
+// src/BadgeSkill.jsx
+import React from 'react';
+
 function BadgeSkill({ skill }) {
   return (
     <span

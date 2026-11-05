@@ -1,9 +1,10 @@
-// === Komponen Utama App ===
+// src/App.jsx
+import React from 'react';
 import KartuProfil from './KartuProfil';
 import KartuProyek from './KartuProyek';
 
 function App() {
-  // --- Data Rencana Praktikum ---
+  // 1. Data daftar mata kuliah praktikum semester ini
   const daftarPraktikum = [
     {
       id: 101,
@@ -35,7 +36,7 @@ function App() {
     },
   ];
 
-  // --- Data Proyek Portofolio ---
+  // Data proyek portofolio mini
   const daftarProyek = [
     {
       id: 1,
@@ -71,7 +72,7 @@ function App() {
     },
   ];
 
-  // --- Event Handler ---
+  // 2. Fungsi penanganan interaksi event tombol
   const notifikasiSapaan = () => {
     alert(
       'Selamat datang di Modul 1! Anda berhasil menguasai fondasi arsitektur React JS.',
@@ -81,14 +82,13 @@ function App() {
   return (
     <div
       style={{
-        maxWidth: '900px',
+        maxWidth: '800px',
         margin: '40px auto',
         padding: '0 24px',
         fontFamily: 'Arial, sans-serif',
         color: '#222',
       }}
     >
-      {/* Header */}
       <header style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h1 style={{ color: '#1B365D', margin: '0 0 8px' }}>
           Praktikum Pemrograman Web
@@ -98,8 +98,7 @@ function App() {
         </p>
       </header>
 
-      {/* Bagian Profil */}
-      <section style={{ marginBottom: '36px' }}>
+      <section style={{ marginBottom: '32px' }}>
         <h2
           style={{
             color: '#2C3E50',
@@ -118,39 +117,7 @@ function App() {
         />
       </section>
 
-      {/* Bagian Showcase Portofolio Mini */}
-      <section style={{ marginBottom: '36px' }}>
-        <h2
-          style={{
-            color: '#2C3E50',
-            borderBottom: '2px solid #E1E4E8',
-            paddingBottom: '8px',
-          }}
-        >
-          Showcase Portofolio Mini
-        </h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-            gap: '16px',
-            marginTop: '16px',
-          }}
-        >
-          {daftarProyek.map((proyek) => (
-            <KartuProyek
-              key={proyek.id}
-              judul={proyek.judul}
-              deskripsi={proyek.deskripsi}
-              teknologi={proyek.teknologi}
-              linkGithub={proyek.linkGithub}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Bagian Rencana Praktikum */}
-      <section style={{ marginBottom: '36px' }}>
+      <section style={{ marginBottom: '32px' }}>
         <h2
           style={{
             color: '#2C3E50',
@@ -160,7 +127,7 @@ function App() {
         >
           Daftar Rencana Praktikum Semester (List Rendering)
         </h2>
-        <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
+        <div style={{ display: 'grid', gap: '12px' }}>
           {daftarPraktikum.map((matkul) => (
             <div
               key={matkul.id}
@@ -205,8 +172,37 @@ function App() {
         </div>
       </section>
 
-      {/* Tombol Interaktivitas */}
-      <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '20px' }}>
+      {/* Showcase Portofolio Mini */}
+      <section style={{ marginBottom: '32px' }}>
+        <h2
+          style={{
+            color: '#2C3E50',
+            borderBottom: '2px solid #E1E4E8',
+            paddingBottom: '8px',
+          }}
+        >
+          Showcase Portofolio Mini
+        </h2>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '16px',
+          }}
+        >
+          {daftarProyek.map((proyek) => (
+            <KartuProyek
+              key={proyek.id}
+              judul={proyek.judul}
+              deskripsi={proyek.deskripsi}
+              teknologi={proyek.teknologi}
+              linkGithub={proyek.linkGithub}
+            />
+          ))}
+        </div>
+      </section>
+
+      <div style={{ textAlign: 'center', marginTop: '40px' }}>
         <button
           onClick={notifikasiSapaan}
           style={{

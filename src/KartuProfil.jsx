@@ -1,4 +1,6 @@
-// === Komponen Kartu Profil ===
+// src/KartuProfil.jsx
+import React from 'react';
+// Komponen Functional menerima properti (props) melalui parameter fungsi
 function KartuProfil({ nama, npm, kelas, status, fotoUrl }) {
   return (
     <div
@@ -14,14 +16,9 @@ function KartuProfil({ nama, npm, kelas, status, fotoUrl }) {
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <img
-          src={fotoUrl || 'https://via.placeholder.com/80'}
-          alt={`Foto ${nama}`}
-          style={{
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-          }}
+            src={fotoUrl || 'https://via.placeholder.com/80'}
+            alt={`Foto ${nama}`}
+            style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
         />
         <div>
           <h3 style={{ margin: '0 0 4px 0', color: '#1B365D' }}>{nama}</h3>
@@ -33,23 +30,15 @@ function KartuProfil({ nama, npm, kelas, status, fotoUrl }) {
           </p>
         </div>
       </div>
-      <div
-        style={{
-          marginTop: '16px',
-          borderTop: '1px solid #E1E4E8',
-          paddingTop: '10px',
-        }}
-      >
-        <span
-          style={{
+      <div style={{ marginTop: '16px', borderTop: '1px solid #E1E4E8', paddingTop: '10px' }}>
+        <span style={{
             padding: '4px 10px',
             borderRadius: '20px',
             fontSize: '12px',
             fontWeight: 'bold',
             backgroundColor: status === 'Aktif' ? '#D4EDDA' : '#FFF3CD',
-            color: status === 'Aktif' ? '#155724' : '#856404',
-          }}
-        >
+            color: status === 'Aktif' ? '#155724' : '#856404'
+        }}>
           Status Akademik: {status}
         </span>
       </div>
