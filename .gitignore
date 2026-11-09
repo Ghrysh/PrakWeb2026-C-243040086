@@ -1,12 +1,9 @@
 # Dependencies
-node_modules
-*/node_modules
+**/node_modules
 
 # Production builds
-dist
-*/dist
-dist-ssr
-*/dist-ssr
+**/dist
+**/dist-ssr
 
 # Environment / local
 *.local
@@ -27,4 +24,3 @@ pnpm-debug.log*
 
 # Documents
 *.docx
-
